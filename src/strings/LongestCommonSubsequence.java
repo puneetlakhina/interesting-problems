@@ -2,7 +2,7 @@ package strings;
 
 /**
  * http://en.wikipedia.org/wiki/Longest_common_subsequence_problem 2 items
- * solution
+ * solution. Finds the longest common subsequence not just the length. 
  * 
  * @author puneet
  * 

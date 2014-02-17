@@ -10,3 +10,4 @@ Current list includes the following:
 - Tukro - http://www.careercup.com/question?id=6574215624916992
 - Levenshtein Distance - Recursive implementation
 - Check Anagrams
+- Longest common subsequence - for strings, 2 elements only. the problem with n elements is NP-hard.
