@@ -11,3 +11,4 @@ Current list includes the following:
 - Levenshtein Distance - Recursive implementation
 - Check Anagrams
 - Longest common subsequence - for strings, 2 elements only. the problem with n elements is NP-hard.
+- Longest common substring
