@@ -52,6 +52,7 @@ public class BinaryTree<T> {
 		return isBst(root, null, null);
 	}
 
+	@SuppressWarnings("unchecked")
 	private static <T> boolean isBst(BinaryTreeNode<T> node, T maxValue,
 			T minValue) {
 
@@ -89,6 +90,7 @@ public class BinaryTree<T> {
 	 * @param val2
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public static <T> T lesser(T val1, T val2) {
 		if (val1 == null) {
 			return val2;
@@ -99,6 +101,7 @@ public class BinaryTree<T> {
 		return ((Comparable<T>) val1).compareTo(val2) > 0 ? val2 : val1;
 	}
 
+	@SuppressWarnings("unchecked")
 	public static <T> T greater(T val1, T val2) {
 		if (val1 == null) {
 			return val2;
