@@ -9,3 +9,4 @@ Current list includes the following:
 - Trie - create and manipulate a trie
 - Tukro - http://www.careercup.com/question?id=6574215624916992
 - Levenshtein Distance - Recursive implementation
+- Check Anagrams
