@@ -49,4 +49,26 @@ public class LongestCommonSubsequence {
 		}
 		return sb;
 	}
+	
+	public static int getLongestCommonSubsequenceLength(String s1, String s2) {
+		int[][] matrix = new int[s1.length() + 1][s2.length() + 1];
+		for(int i=0;i<s1.length()+1;i++) {
+			matrix[i][0] = 0;
+		}
+		for(int i=0;i<s2.length()+1;i++) {
+			matrix[0][i] = 0;
+		}
+		for(int i=1;i<s1.length()+1;i++) {
+			char c1 = s1.charAt(i-1);
+			for(int j=1;j<s2.length()+1;j++) {
+				char c2 = s2.charAt(j-1);
+				if(c1 == c2) {
+					matrix[i][j] = matrix[i-1][j-1] + 1;
+				} else {
+					matrix[i][j] = Math.max(matrix[i-1][j], matrix[i][j-1]);
+				}
+			}
+		}
+		return matrix[s1.length()][s2.length()];
+	}
 }
