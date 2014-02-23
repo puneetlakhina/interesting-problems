@@ -24,4 +24,9 @@ public class LongestCommonSubstringTest {
 	public void testPickLongestStartingAtSameCharacter() {
 		assertEquals("bcxyz", findLongestCommonSubstring("bcxyz", "abcDDDDDbcxyz"));
 	}
+	
+	@Test
+	public void testSameCharacters() {
+		assertEquals("bbb", findLongestCommonSubstring("bbb", "bbb"));
+	}
 }
