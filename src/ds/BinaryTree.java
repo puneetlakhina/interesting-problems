@@ -7,15 +7,20 @@ public class BinaryTree<T> {
 	protected int height = 1;
 
 	protected BinaryTreeNode<T> root;
-
+	public BinaryTree(BinaryTreeNode<T> root) {
+	    this.root = root;
+	}
 	public BinaryTree(T val) {
-		this.root = new BinaryTreeNode<>(val);
+		this(new BinaryTreeNode<>(val));
 	}
 
 	public void addNode(T val) {
 		addNode(root, val, 1);
 	}
 
+	public BinaryTreeNode<T> getRoot() {
+	    return root;
+	}
 	public void addNode(BinaryTreeNode<T> nodeToStartAt, T val,
 			int current_height) {
 		if (current_height > height) {
@@ -85,7 +90,7 @@ public class BinaryTree<T> {
 
 	/**
 	 * Return lesser of the two values
-	 * 
+	 *
 	 * @param val1
 	 * @param val2
 	 * @return
@@ -112,7 +117,8 @@ public class BinaryTree<T> {
 		return ((Comparable<T>) val1).compareTo(val2) > 0 ? val1 : val2;
 	}
 
-	public String toString() {
+	@Override
+    public String toString() {
 		StringBuilder sb = new StringBuilder();
 		Queue<BinaryTreeNode<T>> nextHeightQueue = new LinkedList<>();
 		nextHeightQueue.offer(root);
@@ -144,5 +150,33 @@ public class BinaryTree<T> {
 		}
 		return sb.toString();
 	}
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((root == null) ? 0 : root.hashCode());
+        return result;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        BinaryTree other = (BinaryTree) obj;
+        if (root == null) {
+            if (other.root != null) {
+                return false;
+            }
+        } else if (!root.equals(other.root)) {
+            return false;
+        }
+        return true;
+    }
 
 }
